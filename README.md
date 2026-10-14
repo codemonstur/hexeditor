@@ -1,6 +1,6 @@
 
 [![GitHub Release](https://img.shields.io/github/release/codemonstur/hexeditor.svg)](https://github.com/codemonstur/hexeditor/releases) 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.codemonstur/hexeditor/badge.svg)](http://mvnrepository.com/artifact/com.github.codemonstur/hexeditor)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.codemonstur/hexeditor.svg)](https://central.sonatype.com/artifact/com.github.codemonstur/hexeditor)
 
 # HexEditor
 
