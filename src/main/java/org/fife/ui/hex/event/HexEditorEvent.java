@@ -35,6 +35,10 @@ public class HexEditorEvent extends EventObject {
 	 * Creates a new event object.
 	 *
 	 * @param editor The source of this event.
+	 
+	 * @param offs the offs
+	 * @param added the added
+	 * @param removed the removed
 	 */
 	public HexEditorEvent(HexEditor editor, int offs, int added, int removed) {
 		super(editor);

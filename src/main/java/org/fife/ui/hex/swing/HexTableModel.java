@@ -51,13 +51,21 @@ public class HexTableModel extends AbstractTableModel {
 
 	private static final long serialVersionUID = 1L;
 
+	/** The parent hex editor. */
 	private HexEditor editor;
+	/** The document being edited. */
 	private ByteBuffer doc;
+	/** The number of bytes displayed per row. */
 	private int bytesPerRow;
+	/** The undo manager for edits to the document. */
 	private UndoManager undoManager;
+	/** The names of the table columns. */
 	private String[] columnNames;
+	/** Scratch buffer used when reading a row for the ASCII dump. */
 	private byte[] bitBuf = new byte[16];
+	/** Scratch buffer holding the current ASCII dump row. */
 	private char[] dumpColBuf;
+	/** Precomputed hexadecimal strings for byte values. */
 	private String[] byteStrVals;
 
 
@@ -132,6 +140,12 @@ public class HexTableModel extends AbstractTableModel {
 	}
 
 
+	/**
+	 * Returns the result of {@code getColumnName}.
+	 *
+	 * @param col the col
+	 * @return the result
+	 */
 	public String getColumnName(int col) {
 		return columnNames[col];
 	}

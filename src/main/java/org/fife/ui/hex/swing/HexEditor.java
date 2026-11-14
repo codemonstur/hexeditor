@@ -85,10 +85,15 @@ public class HexEditor extends JScrollPane {
 	 */
 	public static final String PROPERTY_SHOW_GRID = "showGrid";
 
+	/** The table displaying the hex bytes. */
 	private HexTable table;
+	/** Whether alternate row background colors are enabled. */
 	private boolean alternateRowBG;
+	/** Whether alternate column background colors are enabled. */
 	private boolean alternateColumnBG;
+	/** Whether the selection is highlighted in the ASCII dump. */
 	private boolean highlightSelectionInAsciiDump;
+	/** The color used to highlight the selection in the ASCII dump. */
 	private Color highlightSelectionInAsciiDumpColor;
 
 	private static final TransferHandler DEFAULT_TRANSFER_HANDLER =
@@ -119,6 +124,11 @@ public class HexEditor extends JScrollPane {
 
 	}
 
+	/**
+	 * Sets the editable.
+	 *
+	 * @param editable the new value
+	 */
 	public void setEditable(final boolean editable)
 	{
 	  if (this.table != null)

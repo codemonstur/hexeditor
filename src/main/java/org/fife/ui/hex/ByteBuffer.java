@@ -29,6 +29,9 @@ package org.fife.ui.hex;
 import java.io.*;
 
 
+/**
+ * The {@code ByteBuffer} class.
+ */
 public class ByteBuffer {
 
 	/**
@@ -37,16 +40,33 @@ public class ByteBuffer {
 	private byte[] buffer;
 
 
+	/**
+	 * Creates a new instance.
+	 *
+	 * @param size the size
+	 */
 	public ByteBuffer(int size) {
 		buffer = new byte[size];
 	}
 
 
+	/**
+	 * Creates a new instance.
+	 *
+	 * @param file the file
+	 * @throws IOException if the operation fails
+	 */
 	public ByteBuffer(String file) throws IOException {
 		this(new File(file));
 	}
 
 
+	/**
+	 * Creates a new instance.
+	 *
+	 * @param file the file
+	 * @throws IOException if the operation fails
+	 */
 	public ByteBuffer(File file) throws IOException {
 
 		int size = (int)file.length();
@@ -90,16 +110,33 @@ public class ByteBuffer {
 	}
 
 
+	/**
+	 * Returns the result of {@code getByte}.
+	 *
+	 * @param offset the offset
+	 * @return the result
+	 */
 	public byte getByte(int offset) {
 		return buffer[offset];
 	}
 
 
+	/**
+	 * Returns the size.
+	 *
+	 * @return the result
+	 */
 	public int getSize() {
 		return buffer.length;
 	}
 
 
+	/**
+	 * Performs the {@code insertByte} operation.
+	 *
+	 * @param offset the offset
+	 * @param b the b
+	 */
 	public void insertByte(int offset, byte b) {
 		byte[] buf2 = new byte[buffer.length+1];
 		System.arraycopy(buffer,0, buf2,0, offset);
@@ -109,6 +146,12 @@ public class ByteBuffer {
 	}
 
 
+	/**
+	 * Performs the {@code insertBytes} operation.
+	 *
+	 * @param offs the offs
+	 * @param b the b
+	 */
 	public void insertBytes(int offs, byte[] b) {
 
 		if (b==null || b.length==0) {
@@ -124,6 +167,13 @@ public class ByteBuffer {
 	}
 
 
+	/**
+	 * Returns the result of {@code read}.
+	 *
+	 * @param offset the offset
+	 * @param buf the buf
+	 * @return the result
+	 */
 	public int read(int offset, byte[] buf) {
 		if (buf==null) {
 			return -1;
@@ -134,11 +184,24 @@ public class ByteBuffer {
 	}
 
 
+	/**
+	 * Performs the {@code remove} operation.
+	 *
+	 * @param offset the offset
+	 * @param len the len
+	 */
 	public void remove(int offset, int len) {
 		remove(offset, len, null);
 	}
 
 
+	/**
+	 * Performs the {@code remove} operation.
+	 *
+	 * @param offset the offset
+	 * @param len the len
+	 * @param removed the removed
+	 */
 	public void remove(int offset, int len, byte[] removed) {
 		if (removed!=null) {
 			System.arraycopy(buffer,offset, removed,0, len);
@@ -150,6 +213,12 @@ public class ByteBuffer {
 	}
 
 
+	/**
+	 * Performs the {@code setByte} operation.
+	 *
+	 * @param offset the new value
+	 * @param b the new value
+	 */
 	public void setByte(int offset, byte b) {
 		buffer[offset] = b;
 	}
